@@ -140,7 +140,8 @@ void send_avb_1722_router_cmd(chanend c,
                               unsigned key0,
                               unsigned key1,
                               unsigned link,
-                              unsigned hash)
+                              unsigned hash,
+                              unsigned sink_local_id)
 {
   c <: ETHERNET_TX_UPDATE_AVB_ROUTER;
   slave {
@@ -148,6 +149,7 @@ void send_avb_1722_router_cmd(chanend c,
     c <: key1;
     c <: link;
     c <: hash;
+    c <: sink_local_id;
   }
 }
 

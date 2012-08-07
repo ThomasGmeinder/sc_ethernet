@@ -118,7 +118,8 @@ void send_avb_1722_router_cmd(chanend c,
                               unsigned key0,
                               unsigned key1,
                               unsigned link,
-                              unsigned hash);
+                              unsigned hash,
+                              unsigned sink_local_id);
 
 /** This function sets the transmit 
  *  bandwidth restriction for Q-tagged traffic out of the mac.

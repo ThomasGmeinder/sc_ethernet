@@ -214,14 +214,15 @@ void ethernet_tx_server(
               break;
 #ifdef AVB_MAC
         case ETHERNET_TX_UPDATE_AVB_ROUTER:
-          { unsigned key0, key1, link, hash;
+          { unsigned key0, key1, link, hash, sink_local_id;
             master {
               tx[i] :> key0;
               tx[i] :> key1;
               tx[i] :> link;
               tx[i] :> hash;
+              tx[i] :> sink_local_id;
             }
-            avb_1722_router_table_add_entry(key0, key1, link, hash);
+            avb_1722_router_table_add_entry(key0, key1, link, hash, sink_local_id);
           }
           break;
         case ETHERNET_TX_INIT_AVB_ROUTER:
